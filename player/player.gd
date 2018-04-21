@@ -30,20 +30,31 @@ func _process(delta):
 		state = idle
 		
 
-func _on_menu_item_selected(index, clicked_position, body):
+func _on_menu_item_selected(index, clicked_position, area):
 	match index:
 		look:
 			print("looking")
 		interact:
-			if body == null:
+			if area == null:
 				print("cant interact")
 				return
 		use_item:
-			$equipped.get_child(0).use(clicked_position, body)
+			$equipped.get_child(0).use(clicked_position, area)
 		move:
 			state = moving
 			target_position = clicked_position
-			
+		pick_up:
+			if area != null:
+				if area.is_in_group("Pickup"):
+					if $equipped.get_child(0) != null:
+						if $equipped.get_child(0).name.is_subsequence_of(area.name):
+							return
+					
+					var item = area.duplicate()
+					item.remove_from_group("Pickup")
+					inventory.add_child(item)
+					area.queue_free()
+				
 func _input(event):
 	if event.is_action_pressed("inventory"):
 		if (state == browsing):

@@ -12,7 +12,7 @@ position = Vector2( 760.764, 249.18 )
 
 [node name="player" parent="." index="1" instance=ExtResource( 2 )]
 
-position = Vector2( 136.174, 253.494 )
+position = Vector2( 136.174, 441.494 )
 
 [node name="magazine" parent="." index="2" instance=ExtResource( 3 )]
 

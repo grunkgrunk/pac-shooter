@@ -17,6 +17,7 @@ func _input(event):
 
 func _on_menu_index_pressed(index):
 	check_interact = true
-	var bodies = area.get_overlapping_bodies()
-	bodies.append(null)
-	emit_signal("item_selected", index, clicked_position, bodies[0])
+	var areas = area.get_overlapping_areas()
+	print(areas)
+	areas.append(null)
+	emit_signal("item_selected", index, clicked_position, areas[0])

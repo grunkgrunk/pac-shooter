@@ -5,8 +5,6 @@
 [ext_resource path="res://player/icon.png" type="Texture" id=3]
 [ext_resource path="res://popupmenu/popupmenu.tscn" type="PackedScene" id=4]
 
-
-
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
@@ -32,6 +30,7 @@ shape = SubResource( 1 )
 [node name="menu" parent="." index="2" instance=ExtResource( 4 )]
 
 visible = false
+items = [ "look", null, false, false, false, -1, 0, null, "", false, "interact", null, false, false, false, -1, 0, null, "", false, "use item", null, false, false, false, -1, 0, null, "", false, "Move here", null, false, false, false, -1, 0, null, "", false, "Pick up", null, false, false, false, -1, 0, null, "", false ]
 
 [node name="equipped" type="Node2D" parent="." index="3"]
 
