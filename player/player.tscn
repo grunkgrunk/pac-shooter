@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://player/player.gd" type="Script" id=1]
 [ext_resource path="res://inventory/inventory.tscn" type="PackedScene" id=2]
 [ext_resource path="res://player/icon.png" type="Texture" id=3]
 [ext_resource path="res://popupmenu/popupmenu.tscn" type="PackedScene" id=4]
+[ext_resource path="res://player/cross.png" type="Texture" id=5]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -31,6 +32,8 @@ shape = SubResource( 1 )
 
 visible = false
 items = [ "look", null, false, false, false, -1, 0, null, "", false, "interact", null, false, false, false, -1, 0, null, "", false, "use item", null, false, false, false, -1, 0, null, "", false, "Move here", null, false, false, false, -1, 0, null, "", false, "Pick up", null, false, false, false, -1, 0, null, "", false ]
+hide_on_state_item_selection = true
+_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Popup", "Rect", "Size Flags", "Visibility" ]
 
 [node name="equipped" type="Node2D" parent="." index="3"]
 
@@ -53,5 +56,24 @@ size_flags_vertical = 4
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+
+[node name="cross" type="Node" parent="." index="5"]
+
+[node name="sprite" type="Sprite" parent="cross" index="0"]
+
+visible = false
+scale = Vector2( 0.1, 0.1 )
+z_index = -1
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="tween" type="Tween" parent="." index="6"]
+
+repeat = false
+playback_process_mode = 1
+playback_speed = 1.0
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
 
 

@@ -1,20 +1,22 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://enemy/enemy.tscn" type="PackedScene" id=1]
-[ext_resource path="res://player/player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Items/magazine.tscn" type="PackedScene" id=3]
+[ext_resource path="res://enemy/enemy.gd" type="Script" id=2]
+[ext_resource path="res://player/player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://items/magazine/magazine.tscn" type="PackedScene" id=4]
 
 [node name="root" type="Node"]
 
 [node name="enemy" parent="." index="0" instance=ExtResource( 1 )]
 
-position = Vector2( 760.764, 249.18 )
+position = Vector2( 759.574, 248.585 )
+script = ExtResource( 2 )
 
-[node name="player" parent="." index="1" instance=ExtResource( 2 )]
+[node name="player" parent="." index="1" instance=ExtResource( 3 )]
 
-position = Vector2( 136.174, 441.494 )
+position = Vector2( 135.005, 441.494 )
 
-[node name="magazine" parent="." index="2" instance=ExtResource( 3 )]
+[node name="magazine" parent="." index="2" instance=ExtResource( 4 )]
 
 position = Vector2( 630.439, 519.068 )
 

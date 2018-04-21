@@ -10,7 +10,7 @@ radius = 101.293
 [sub_resource type="CircleShape2D" id=2]
 
 custom_solver_bias = 0.0
-radius = 37.9838
+radius = 218.957
 
 [node name="enemy" type="KinematicBody2D" groups=[
 "Enemy",
