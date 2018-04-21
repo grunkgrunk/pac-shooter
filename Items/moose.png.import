@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sloth.png-f4d8005917965466ccade90326a9077d.stex"
+path="res://.import/moose.png-53269077dfb4be10c076b152e104c21b.stex"
 
 [deps]
 
-source_file="res://inventory/sloth.png"
-source_md5="ea017ebe3f969e6f5ec11e5d5aefcee3"
+source_file="res://Items/moose.png"
+source_md5="eaf9df0eb1b25ba5ec36b4e2e956b08f"
 
-dest_files=[ "res://.import/sloth.png-f4d8005917965466ccade90326a9077d.stex" ]
-dest_md5="94f42bfab05af555448a9945b9dc41a3"
+dest_files=[ "res://.import/moose.png-53269077dfb4be10c076b152e104c21b.stex" ]
+dest_md5="3a3e69472012bc0c47619eb764828be3"
 
 [params]
 

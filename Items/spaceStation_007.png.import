@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/moose.png-f7a6d71cdcacf868248c692b90ddf76d.stex"
+path="res://.import/spaceStation_007.png-e5304994c47a8a600dac7c12e86fc0bd.stex"
 
 [deps]
 
-source_file="res://inventory/moose.png"
-source_md5="eaf9df0eb1b25ba5ec36b4e2e956b08f"
+source_file="res://Items/spaceStation_007.png"
+source_md5="8b51afad258db7ae94909398a6373401"
 
-dest_files=[ "res://.import/moose.png-f7a6d71cdcacf868248c692b90ddf76d.stex" ]
-dest_md5="3a3e69472012bc0c47619eb764828be3"
+dest_files=[ "res://.import/spaceStation_007.png-e5304994c47a8a600dac7c12e86fc0bd.stex" ]
+dest_md5="c01a93f41f5c761ccb8bcb9b75b2c439"
 
 [params]
 

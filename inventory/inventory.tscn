@@ -1,44 +1,28 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://inventory/inventory.gd" type="Script" id=1]
-[ext_resource path="res://inventory/moose.png" type="Texture" id=2]
-[ext_resource path="res://inventory/moose.gd" type="Script" id=3]
-[ext_resource path="res://inventory/rabbit.png" type="Texture" id=4]
-[ext_resource path="res://inventory/sloth.png" type="Texture" id=5]
-[ext_resource path="res://inventory/snake.png" type="Texture" id=6]
-[ext_resource path="res://inventory/spaceMissiles_040.png" type="Texture" id=7]
-[ext_resource path="res://inventory/gun.gd" type="Script" id=8]
+[ext_resource path="res://Items/spaceMissiles_040.png" type="Texture" id=2]
+[ext_resource path="res://Items/gun.gd" type="Script" id=3]
+[ext_resource path="res://Items/moose.png" type="Texture" id=4]
+[ext_resource path="res://Items/moose.gd" type="Script" id=5]
+[ext_resource path="res://Items/rabbit.png" type="Texture" id=6]
+[ext_resource path="res://Items/sloth.png" type="Texture" id=7]
+[ext_resource path="res://Items/snake.png" type="Texture" id=8]
+
+
+
+
 
 [node name="inventory" type="Node"]
 
 script = ExtResource( 1 )
 
-[node name="moose" type="Sprite" parent="." index="0"]
+[node name="gun" type="Sprite" parent="." index="0"]
 
-position = Vector2( 155.696, 94.3334 )
+editor/display_folded = true
+position = Vector2( 336.056, 278.296 )
 texture = ExtResource( 2 )
 script = ExtResource( 3 )
-
-[node name="rabbit" type="Sprite" parent="." index="1"]
-
-position = Vector2( 359.932, 87.0065 )
-texture = ExtResource( 4 )
-
-[node name="sloth" type="Sprite" parent="." index="2"]
-
-position = Vector2( 566, 93.4175 )
-texture = ExtResource( 5 )
-
-[node name="snake" type="Sprite" parent="." index="3"]
-
-position = Vector2( 156.612, 288.495 )
-texture = ExtResource( 6 )
-
-[node name="gun" type="Sprite" parent="." index="4"]
-
-position = Vector2( 336.056, 278.296 )
-texture = ExtResource( 7 )
-script = ExtResource( 8 )
 
 [node name="Timer" type="Timer" parent="gun" index="0"]
 
@@ -46,5 +30,26 @@ process_mode = 1
 wait_time = 1.0
 one_shot = false
 autostart = false
+
+[node name="moose" type="Sprite" parent="." index="1"]
+
+position = Vector2( 155.696, 94.3334 )
+texture = ExtResource( 4 )
+script = ExtResource( 5 )
+
+[node name="rabbit" type="Sprite" parent="." index="2"]
+
+position = Vector2( 359.932, 87.0065 )
+texture = ExtResource( 6 )
+
+[node name="sloth" type="Sprite" parent="." index="3"]
+
+position = Vector2( 566, 93.4175 )
+texture = ExtResource( 7 )
+
+[node name="snake" type="Sprite" parent="." index="4"]
+
+position = Vector2( 156.612, 288.495 )
+texture = ExtResource( 8 )
 
 

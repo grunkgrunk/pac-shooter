@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spaceMissiles_040.png-5682ca761ea56fe5c700125eafd9b09f.stex"
+path="res://.import/snake.png-9790b5d8356fc239d3d828041acd1d44.stex"
 
 [deps]
 
-source_file="res://inventory/spaceMissiles_040.png"
-source_md5="be0bcb76e511bb8138833de168e7633d"
+source_file="res://Items/snake.png"
+source_md5="53736ebd77543fe7b335c25d1cd2c6d0"
 
-dest_files=[ "res://.import/spaceMissiles_040.png-5682ca761ea56fe5c700125eafd9b09f.stex" ]
-dest_md5="ca674813a7daab8657cf1154bd7ed0c0"
+dest_files=[ "res://.import/snake.png-9790b5d8356fc239d3d828041acd1d44.stex" ]
+dest_md5="2dc06a4dccd0b5fcdf51883a18c0f8ed"
 
 [params]
 

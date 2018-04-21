@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-enum {look, interact, use_item, move}
+enum {look, interact, use_item, move, pick_up}
 enum {idle, moving, browsing}
 
 var state = idle
@@ -21,7 +21,6 @@ func equip_item(item):
 	$equipped.add_child(item)
 	
 	
-
 func _process(delta):
 	var dist = position.distance_to(target_position)
 	if dist > 1:

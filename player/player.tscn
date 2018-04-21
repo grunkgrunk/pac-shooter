@@ -5,12 +5,14 @@
 [ext_resource path="res://player/icon.png" type="Texture" id=3]
 [ext_resource path="res://popupmenu/popupmenu.tscn" type="PackedScene" id=4]
 
+
+
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
 radius = 63.5395
 
-[node name="player" type="KinematicBody2D"]
+[node name="player" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
