@@ -21,6 +21,7 @@ position = Vector2( 461.173, 494.772 )
 [node name="magazine" parent="." index="1" instance=ExtResource( 3 )]
 
 position = Vector2( 428.617, 340.228 )
+info = null
 
 [node name="key" parent="." index="2" instance=ExtResource( 4 )]
 

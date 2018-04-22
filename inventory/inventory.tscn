@@ -17,22 +17,20 @@ position = Vector2( 509.174, 349.568 )
 
 [node name="magazine" parent="." index="1" instance=ExtResource( 3 )]
 
+info = null
+
 [node name="bunny" parent="." index="2" instance=ExtResource( 4 )]
 
 position = Vector2( 132.161, 178.39 )
-look = null
-pick_up = null
 
 [node name="sloth" parent="." index="3" instance=ExtResource( 5 )]
 
 position = Vector2( 545.041, 116.569 )
-look = null
-pick_up = null
+info = null
 
 [node name="empty_gun" parent="." index="4" instance=ExtResource( 6 )]
 
 position = Vector2( 356.899, 308.611 )
-look = null
-pick_up = null
+info = null
 
 

@@ -2,9 +2,7 @@
 
 [ext_resource path="res://items/base_item.gd" type="Script" id=1]
 
-
-
-[node name="base_item" type="Area2D" index="0" groups=[
+[node name="base_item" type="Area2D" groups=[
 "item",
 ]]
 
@@ -16,8 +14,13 @@ angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
-item_name = null
-info = null
+item_name = "Null"
+info = "Null"
+look = null
+pick_up = null
+interact = null
+use_item_success = null
+use_item_failure = null
 
 [node name="sprite" type="Sprite" parent="." index="0"]
 

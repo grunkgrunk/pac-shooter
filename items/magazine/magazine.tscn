@@ -13,6 +13,9 @@ radius = 20.102
 item_name = "lifestyle magazube"
 look = null
 pick_up = "yaaay a magazine"
+interact = null
+use_item_success = null
+use_item_failure = null
 
 [node name="sprite" parent="." index="0"]
 

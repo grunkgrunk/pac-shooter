@@ -11,9 +11,9 @@ radius = 93.0563
 [node name="key" instance=ExtResource( 1 )]
 
 item_name = "tiny gold key"
-info = "Null"
-look = null
 pick_up = "I got the key! Now press 'I' to open my inventory"
+use_item_success = "The door broke because the key was too big! Atleast it's open now :)"
+use_item_failure = "I can't unlock %s ."
 
 [node name="sprite" parent="." index="0"]
 

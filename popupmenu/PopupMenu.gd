@@ -14,6 +14,7 @@ func _input(event):
 		clicked_position = event.global_position
 		rect_position = clicked_position
 		popup()
+		get_node("../speech").hide()
 
 func _on_menu_index_pressed(index):
 	check_interact = true

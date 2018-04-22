@@ -11,8 +11,6 @@ radius = 93.0563
 
 item_name = "nothing"
 info = "this nothing - don't worry about it."
-look = null
-pick_up = ""
 
 [node name="sprite" parent="." index="0"]
 

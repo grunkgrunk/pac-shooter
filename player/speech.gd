@@ -9,7 +9,11 @@ func _ready():
 	#combine_item("fish", "fishing rod")
 	print("hello")
 
+func _process(delta):
+	pass
+
 func combine_or_select(items):
+	show()
 	var item_names = []
 	for i in items:
 		if i != null:
@@ -24,18 +28,25 @@ func combine_or_select(items):
 		
 
 func equip(item):
+	show()
 	tie.reset()
 	tie.buff_text("I now have %s equipped!" % item, 0.01)
 	tie.set_state(tie.STATE_OUTPUT)
 	
 	
 func reload():
+	show()
 	tie.reset()
 	tie.buff_text("I have now reloaded the gun!", 0.02)
 	tie.set_state(tie.STATE_OUTPUT)
 	
 func say(sent):
+	if sent == null:
+		hide()
+		return
+	show()
 	tie.reset()
 	tie.buff_text(sent, 0.01)
 	tie.set_state(tie.STATE_OUTPUT)
+	
 	

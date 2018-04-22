@@ -21,6 +21,7 @@ var equipped = null
 var combine_item = null
 
 func _ready():
+	speech.hide()
 	$menu.connect("item_selected", self, "_on_menu_item_selected")
 	equip_item(inventory.selected())
 
@@ -55,17 +56,45 @@ func _process(delta):
 
 func _on_menu_item_selected(index, clicked_position, area):
 	# emit signals and do things based on those
+	
+	speech.show()
 	match index:
 		ACTION.look:
-			print("looking")
+			if(area != null):
+				if area.look != null:
+					speech.say(area.look)
+				else:
+					speech.say("Wow. That is truly a " + area.item_name)
+			else:
+				speech.say("There is nothing of interest there..")
+			
 		ACTION.interact:
 			# fix this
-			if area == null:
-				print("cant interact")
-				return
+			if(area != null):
+				if area.interact != null:
+					speech.say(area.interact)
+				else:
+					speech.say("I interacted with " + area.item_name + " but nothing happened.")
+			else:
+				speech.say("There is nothing of interest there..")
+			
 		ACTION.use_item:
-			equipped.use(clicked_position, area)
+			var success = equipped.use(clicked_position, area)
+			if success:
+				speech.say(equipped.use_item_success)
+				return
+			
+			if area != null:
+				if equipped.use_item_failure != null:
+					speech.say(equipped.use_item_failure % area.item_name)
+				else:
+					speech.say("Damn I wish I could use %s on %s" % [equipped.item_name, area.item_name]) 
+			else:
+				speech.say("I cannot use %s like that" % equipped.item_name) 
+			#speech.say(equipped.use_item)
+			
 		ACTION.move:
+			speech.hide()
 			state = STATE.moving
 			target_position = clicked_position
 			$cross/sprite.global_position = target_position
@@ -85,11 +114,14 @@ func _on_menu_item_selected(index, clicked_position, area):
 			
 			var item = area.duplicate()
 			inventory.add_child(item)
-			print(item.pick_up)
 			speech.say(item.pick_up)
 			area.queue_free()
 				
 func _input(event):
+#	for a in ["inventory", "ui_left", "ui_right", "combine"]:
+#		if event.is_action_pressed(a) and state != idle:
+#			
+		
 	match state:
 		idle:
 			if event.is_action_pressed("inventory"):
@@ -133,6 +165,6 @@ func _input(event):
 						speech.reload()
 						
 					else:
-						print("what are you trying to achieve?")
+						speech.say("Combining %s and %s is very creaitve, but not helpful!" %[equipped.item_name,combine_item.item_name])
 					state = idle
 	

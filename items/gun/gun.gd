@@ -30,6 +30,7 @@ func use(clicked_position, body):
 			result["collider"].queue_free()
 	
 	update()
+	return true
 
 func _on_timeout():
 	from = null

@@ -98,8 +98,7 @@ position = Vector2( 571.416, 526.081 )
 [node name="magazine" parent="." index="2" instance=ExtResource( 4 )]
 
 position = Vector2( 630.439, 519.068 )
-look = null
-pick_up = null
+info = null
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="3"]
 

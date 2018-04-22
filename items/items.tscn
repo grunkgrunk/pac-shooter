@@ -15,44 +15,36 @@
 position = Vector2( 431.64, 109.394 )
 item_name = "gun"
 info = ""
-look = null
-pick_up = null
 
 [node name="magazine" parent="." index="1" instance=ExtResource( 2 )]
 
 position = Vector2( 136.287, 494.638 )
 item_name = "magazine"
-look = null
+info = null
 pick_up = null
 
 [node name="moose" parent="." index="2" instance=ExtResource( 3 )]
 
 position = Vector2( 405.957, 517.569 )
 item_name = "moose"
-look = null
-pick_up = null
+info = null
 
 [node name="sloth" parent="." index="3" instance=ExtResource( 4 )]
 
 position = Vector2( 718.656, 98.3875 )
 item_name = "sloth"
-look = null
-pick_up = null
+info = null
 
 [node name="bunny" parent="." index="4" instance=ExtResource( 5 )]
 
 position = Vector2( 210.967, 159.601 )
 item_name = "bunny"
-look = null
-pick_up = null
 
 [node name="snake" parent="." index="5" instance=ExtResource( 6 )]
 
 position = Vector2( 688.469, 323.113 )
 item_name = "ssssssss"
 info = "beware the snek trap"
-look = null
-pick_up = null
 
 [node name="key" parent="." index="6" instance=ExtResource( 7 )]
 
