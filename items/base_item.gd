@@ -2,6 +2,8 @@ extends Area2D
 
 export(String) var item_name
 export(String) var info
+export(String) var look
+export(String) var pick_up
 var short_name
 
 func _ready():

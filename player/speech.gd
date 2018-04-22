@@ -9,11 +9,6 @@ func _ready():
 	#combine_item("fish", "fishing rod")
 	print("hello")
 
-func open_inventory():
-	tie.reset()
-	tie.buff_text("I got the key! Now press 'I' to open my inventory", 0.01)
-	tie.set_state(tie.STATE_OUTPUT)
-
 func combine_or_select(items):
 	var item_names = []
 	for i in items:
@@ -38,3 +33,9 @@ func reload():
 	tie.reset()
 	tie.buff_text("I have now reloaded the gun!", 0.02)
 	tie.set_state(tie.STATE_OUTPUT)
+	
+func say(sent):
+	tie.reset()
+	tie.buff_text(sent, 0.01)
+	tie.set_state(tie.STATE_OUTPUT)
+	

@@ -1,8 +1,7 @@
 {
-
-    "interact" {
-        "duck": {
-            "unuasable": ["sdkhfsdf", "kjlshdfk"]
-        }
+    "mooose": {
+        "pickup": "Wooow you picked up a moose",
+        "info": "This is a nice moose",
+        "look": "There is moose lieyg ojdhnbf"
     }
 }

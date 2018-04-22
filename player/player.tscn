@@ -7,7 +7,7 @@
 [ext_resource path="res://player/speech.gd" type="Script" id=5]
 [ext_resource path="res://addons/GodotTIE/text_interface_engine.gd" type="Script" id=6]
 [ext_resource path="res://addons/GodotTIE/GodotTIE_icon.png" type="Texture" id=7]
-[ext_resource path="res://fonts/Kenney Pixel.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://fonts/Kenney High.ttf" type="DynamicFontData" id=8]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -16,7 +16,7 @@ radius = 63.5395
 
 [sub_resource type="DynamicFont" id=2]
 
-size = 30
+size = 25
 use_mipmaps = false
 use_filter = false
 font_data = ExtResource( 8 )
@@ -68,48 +68,14 @@ position = Vector2( -84, 0 )
 
 position = Vector2( 87, 0 )
 
-[node name="camera" type="Camera2D" parent="." index="7"]
-
-anchor_mode = 1
-rotating = false
-current = true
-zoom = Vector2( 1, 1 )
-limit_left = -10000000
-limit_top = -10000000
-limit_right = 10000000
-limit_bottom = 10000000
-limit_smoothed = false
-drag_margin_h_enabled = true
-drag_margin_v_enabled = true
-smoothing_enabled = true
-smoothing_speed = 5.0
-offset_v = 0.0
-offset_h = 0.0
-drag_margin_left = 0.2
-drag_margin_top = 0.2
-drag_margin_right = 0.2
-drag_margin_bottom = 0.2
-editor_draw_screen = true
-editor_draw_limits = false
-editor_draw_drag_margin = false
-_sections_unfolded = [ "Smoothing" ]
-
-[node name="canvas" type="CanvasLayer" parent="." index="8"]
-
-layer = 1
-offset = Vector2( 0, 0 )
-rotation = 0.0
-scale = Vector2( 1, 1 )
-transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-
-[node name="menu" parent="canvas" index="0" instance=ExtResource( 4 )]
+[node name="menu" parent="." index="7" instance=ExtResource( 4 )]
 
 visible = false
 items = [ "look", null, false, false, false, -1, 0, null, "", false, "interact", null, false, false, false, -1, 0, null, "", false, "use item", null, false, false, false, -1, 0, null, "", false, "Move here", null, false, false, false, -1, 0, null, "", false, "Pick up", null, false, false, false, -1, 0, null, "", false ]
 hide_on_state_item_selection = true
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Popup", "Rect", "Size Flags", "Visibility" ]
 
-[node name="speech" type="Control" parent="canvas" index="1"]
+[node name="speech" type="Control" parent="." index="8"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -125,7 +91,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 script = ExtResource( 5 )
 
-[node name="engine" type="ReferenceRect" parent="canvas/speech" index="0"]
+[node name="engine" type="ReferenceRect" parent="speech" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -155,6 +121,14 @@ PRINT_INPUT = true
 BLINKING_INPUT = true
 INPUT_CHARACTERS_LIMIT = -1
 
-[connection signal="index_pressed" from="canvas/menu" to="." method="_on_menu_index_pressed"]
+[node name="canvas" type="CanvasLayer" parent="." index="9"]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+
+[connection signal="index_pressed" from="menu" to="." method="_on_menu_index_pressed"]
 
 

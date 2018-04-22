@@ -14,15 +14,14 @@ onready var inventory = preload("res://inventory/inventory.tscn").instance()
 onready var all_items = preload("res://items/items.tscn").instance()
 
 onready var target_position = position
-onready var speech = $canvas/speech
+onready var speech = $speech
 
 
 var equipped = null
-var combine_item = []
+var combine_item = null
 
 func _ready():
-
-	$canvas/menu.connect("item_selected", self, "_on_menu_item_selected")
+	$menu.connect("item_selected", self, "_on_menu_item_selected")
 	equip_item(inventory.selected())
 
 func equip_item(item):
@@ -47,7 +46,7 @@ func _process(delta):
 	elif state == STATE.moving:
 		position = target_position
 		state = STATE.idle
-		speech.open_inventory()
+		
 		
 
 func _on_menu_item_selected(index, clicked_position, area):
@@ -81,6 +80,8 @@ func _on_menu_item_selected(index, clicked_position, area):
 			
 			var item = area.duplicate()
 			inventory.add_child(item)
+			print(item.pick_up)
+			speech.say(item.pick_up)
 			area.queue_free()
 				
 func _input(event):
@@ -129,8 +130,4 @@ func _input(event):
 					else:
 						print("what are you trying to achieve?")
 					state = idle
-		
-
-
-func _on_menu_index_pressed(index):
-	pass # replace with function body
+	
