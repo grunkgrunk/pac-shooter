@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spaceMissiles_040.png-2b909de830416daa2226832fbaf3d361.stex"
+path="res://.import/enemy.png-1891d9038eeed672a2459bc4e7db5910.stex"
 
 [deps]
 
-source_file="res://items/gun/spaceMissiles_040.png"
-source_md5="be0bcb76e511bb8138833de168e7633d"
+source_file="res://enemy/enemy.png"
+source_md5="4b23a15e3291d3f864f817f05596e1d6"
 
-dest_files=[ "res://.import/spaceMissiles_040.png-2b909de830416daa2226832fbaf3d361.stex" ]
-dest_md5="ca674813a7daab8657cf1154bd7ed0c0"
+dest_files=[ "res://.import/enemy.png-1891d9038eeed672a2459bc4e7db5910.stex" ]
+dest_md5="7895fbeb61c76e96c64aa3e7c364c8f8"
 
 [params]
 

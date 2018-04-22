@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/brick_wall.jpeg-e44024243952dc06b44d98f85bfd4e14.stex"
+path="res://.import/muzzle_flash.png-20d59e62b2fdcee6279fa5813b253380.stex"
 
 [deps]
 
-source_file="res://rooms/brick_wall.jpeg"
-source_md5="5d9a2f06b466b36b9ca81439d0a76683"
+source_file="res://items/gun/muzzle_flash.png"
+source_md5="76dfb478bfd66995346aaaa9c98314ff"
 
-dest_files=[ "res://.import/brick_wall.jpeg-e44024243952dc06b44d98f85bfd4e14.stex" ]
-dest_md5="dea7b8b7218ffd52403acdc9fa13b500"
+dest_files=[ "res://.import/muzzle_flash.png-20d59e62b2fdcee6279fa5813b253380.stex" ]
+dest_md5="d29613fed9499493d4f15671da272fa4"
 
 [params]
 

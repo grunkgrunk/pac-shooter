@@ -81,7 +81,6 @@ position = Vector2( 26.8216, -124.796 )
 [node name="menu" parent="." index="7" instance=ExtResource( 4 )]
 
 visible = false
-items = [ "look", null, false, false, false, -1, 0, null, "", false, "interact", null, false, false, false, -1, 0, null, "", false, "use item", null, false, false, false, -1, 0, null, "", false, "Move here", null, false, false, false, -1, 0, null, "", false, "Pick up", null, false, false, false, -1, 0, null, "", false ]
 hide_on_state_item_selection = true
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Popup", "Rect", "Size Flags", "Visibility" ]
 
@@ -170,7 +169,5 @@ audio_bus_name = "Master"
 
 position = Vector2( -4.93268, -94.707 )
 shape = SubResource( 3 )
-
-[connection signal="index_pressed" from="menu" to="." method="_on_menu_index_pressed"]
 
 

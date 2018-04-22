@@ -39,7 +39,7 @@ func equip_hand(hand, item):
 
 func _process(delta):
 	var dist = position.distance_to(target_position)
-	if dist > 5:
+	if dist > 5 and state == STATE.moving:
 		var dir = (target_position - position).normalized()
 		var collision = move_and_collide(dir * 200 * delta)
 		
@@ -69,14 +69,21 @@ func _on_menu_item_selected(index, clicked_position, area):
 				speech.say("There is nothing of interest there..")
 			
 		ACTION.interact:
-			# fix this
+			# only interact if in range
+			
 			if(area != null):
+				if not area.get_overlapping_areas().has($interact):
+					speech.say("Oh no I can't touch %s from over here" %area.item_name)
+					return
+				if area.has_method("interacted"):
+					area.interacted()
+					return
 				if area.interact != null:
 					speech.say(area.interact)
 				else:
 					speech.say("I interacted with " + area.item_name + " but nothing happened.")
 			else:
-				speech.say("There is nothing of interest there..")
+				speech.say("There is nothing to interact with there..")
 			
 		ACTION.use_item:
 			var success = equipped.use(clicked_position, area)
@@ -110,11 +117,16 @@ func _on_menu_item_selected(index, clicked_position, area):
 					return
 			
 			if not area.get_overlapping_areas().has($interact):
+				speech.say("Oh no I cant lift %s. It is out of reach" %area.item_name)
+				return
+				
+			speech.say(area.pick_up)
+			if not area.can_pick_up:
 				return
 			
 			var item = area.duplicate()
 			inventory.add_child(item)
-			speech.say(item.pick_up)
+			
 			area.queue_free()
 				
 func _input(event):

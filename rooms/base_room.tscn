@@ -1,5 +1,7 @@
 [gd_scene format=2]
 
-[node name="base_room" type="Node2D"]
+[node name="base_room" type="YSort"]
+
+sort_enabled = true
 
 

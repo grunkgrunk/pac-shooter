@@ -1,5 +1,7 @@
 extends Area2D
 
+export(bool) var can_pick_up = true
+
 export(String) var item_name
 export(String) var info
 export(String) var look
@@ -8,6 +10,8 @@ export(String) var interact
 
 export(String) var use_item_success
 export(String) var use_item_failure
+
+
 
 
 var short_name

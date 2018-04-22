@@ -11,7 +11,7 @@ config_version=3
 [application]
 
 config/name="pac-shooter"
-run/main_scene="res://rooms/room1.tscn"
+run/main_scene="res://rooms/game.tscn"
 config/icon="res://icon.png"
 
 [display]

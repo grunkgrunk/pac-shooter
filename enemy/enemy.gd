@@ -15,7 +15,7 @@ func _process(delta):
 	# Update game logic here.
 	if player != null:
 		var diff = (player.position - position).normalized()
-		move_and_collide(diff * 20 * delta)
+		move_and_collide(diff * 40 * delta)
 
 func _on_vision_body_entered(body):
 	if body.name == "player":

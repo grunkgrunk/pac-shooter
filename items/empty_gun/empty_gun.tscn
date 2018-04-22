@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://items/base_item.tscn" type="PackedScene" id=1]
-[ext_resource path="res://items/gun/spaceMissiles_040.png" type="Texture" id=2]
+[ext_resource path="res://items/empty_gun/gun.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -10,11 +10,14 @@ radius = 13.8027
 
 [node name="empty_gun" instance=ExtResource( 1 )]
 
+can_pick_up = true
 item_name = "gun without ammo"
 
 [node name="sprite" parent="." index="0"]
 
+scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="shape" type="CollisionShape2D" parent="." index="1"]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bg_1.jpg-21891289fbb776da8207adebb529eac5.stex"
+path="res://.import/gun.png-cc07ecb7bcc793f9d92a5e32cbbe8267.stex"
 
 [deps]
 
-source_file="res://rooms/bg_1.jpg"
-source_md5="44a5be9b9b4f526bc0b50b4b853b9cff"
+source_file="res://items/empty_gun/gun.png"
+source_md5="6ae63310ed4975c94f00f8bde78a615c"
 
-dest_files=[ "res://.import/bg_1.jpg-21891289fbb776da8207adebb529eac5.stex" ]
-dest_md5="40d109a50084eb4b183eb00c53f1fae6"
+dest_files=[ "res://.import/gun.png-cc07ecb7bcc793f9d92a5e32cbbe8267.stex" ]
+dest_md5="6ff7e95b28eb447f5af3b022d3d22748"
 
 [params]
 

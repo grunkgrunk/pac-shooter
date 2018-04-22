@@ -5,15 +5,16 @@
 [ext_resource path="res://items/magazine/magazine.tscn" type="PackedScene" id=3]
 [ext_resource path="res://items/bunny/bunny.tscn" type="PackedScene" id=4]
 [ext_resource path="res://items/sloth/sloth.tscn" type="PackedScene" id=5]
-[ext_resource path="res://items/empty_gun/empty_gun.tscn" type="PackedScene" id=6]
+[ext_resource path="res://items/gun/gun.tscn" type="PackedScene" id=6]
 
-[node name="inventory" type="Node2D"]
+[node name="inventory" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
 [node name="nothing" parent="." index="0" instance=ExtResource( 2 )]
 
 position = Vector2( 509.174, 349.568 )
+can_pick_up = true
 
 [node name="magazine" parent="." index="1" instance=ExtResource( 3 )]
 
@@ -22,15 +23,16 @@ info = null
 [node name="bunny" parent="." index="2" instance=ExtResource( 4 )]
 
 position = Vector2( 132.161, 178.39 )
+can_pick_up = true
 
 [node name="sloth" parent="." index="3" instance=ExtResource( 5 )]
 
 position = Vector2( 545.041, 116.569 )
+can_pick_up = true
 info = null
 
-[node name="empty_gun" parent="." index="4" instance=ExtResource( 6 )]
+[node name="gun" parent="." index="4" instance=ExtResource( 6 )]
 
-position = Vector2( 356.899, 308.611 )
-info = null
+position = Vector2( 766.221, 228.952 )
 
 

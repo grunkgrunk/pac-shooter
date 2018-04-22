@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spaceMeteors_001.png-84a6efdae7deffbaae24ff93606c618a.stex"
+path="res://.import/bg_1.jpg-3cc587152c32df5b57c0140ceb01081b.stex"
 
 [deps]
 
-source_file="res://enemy/spaceMeteors_001.png"
-source_md5="1ff815b28a8f5dde09ca231559839d51"
+source_file="res://rooms/room1/bg_1.jpg"
+source_md5="44a5be9b9b4f526bc0b50b4b853b9cff"
 
-dest_files=[ "res://.import/spaceMeteors_001.png-84a6efdae7deffbaae24ff93606c618a.stex" ]
-dest_md5="4d6b1fcfdb6f1d3d40e46c8faf03287e"
+dest_files=[ "res://.import/bg_1.jpg-3cc587152c32df5b57c0140ceb01081b.stex" ]
+dest_md5="40d109a50084eb4b183eb00c53f1fae6"
 
 [params]
 

@@ -1,0 +1,72 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://enemy/enemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://items/magazine/magazine.tscn" type="PackedScene" id=2]
+[ext_resource path="res://items/key/key.tscn" type="PackedScene" id=3]
+[ext_resource path="res://rooms/room1/bg_1.jpg" type="Texture" id=4]
+[ext_resource path="res://items/door/door.tscn" type="PackedScene" id=5]
+[ext_resource path="res://rooms/room2/room2.tscn" type="PackedScene" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 105.668, 272.184 )
+
+[node name="room1" type="YSort"]
+
+sort_enabled = true
+
+[node name="enemy" parent="." index="0" instance=ExtResource( 1 )]
+
+position = Vector2( 753.001, 496.961 )
+
+[node name="magazine" parent="." index="1" instance=ExtResource( 2 )]
+
+position = Vector2( 428.617, 340.228 )
+info = null
+
+[node name="key" parent="." index="2" instance=ExtResource( 3 )]
+
+position = Vector2( 322.46, 351.492 )
+can_pick_up = true
+
+[node name="bg_1" type="Sprite" parent="." index="3"]
+
+position = Vector2( 527.994, 200.081 )
+scale = Vector2( 0.262057, 0.262057 )
+z_index = -4096
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Z Index" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="borders" type="StaticBody2D" parent="." index="4"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="borders" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 11.7592, 293.983, 68.4157, 602.877, 226.525, 749.033, 1142.51, 710.407, 1048.71, 345.299, 632.098, 224.823, 651.411, 374.728, 904.455, 419.18, 1013.76, 476.811, 1057.19, 593.563, 283.4, 602.877, 267.232, 416.826, 450.798, 401.942, 652.73, 375.05, 631.117, 225.227, 310.564, 214.043 )
+
+[node name="door" parent="." index="5" instance=ExtResource( 5 )]
+
+position = Vector2( 593.339, 326.902 )
+is_open = true
+to_room = ExtResource( 6 )
+spawn_path = "1->2"
+
+[node name="shape" type="CollisionShape2D" parent="door" index="1"]
+
+position = Vector2( -26.5396, -107.613 )
+scale = Vector2( 0.645819, 0.655333 )
+shape = SubResource( 1 )
+
+

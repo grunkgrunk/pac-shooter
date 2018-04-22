@@ -7,10 +7,10 @@ path="res://.import/magazine.png-2cbc89e132ac11c6e6bab6713084771c.stex"
 [deps]
 
 source_file="res://items/magazine/magazine.png"
-source_md5="8b51afad258db7ae94909398a6373401"
+source_md5="e00bc8780fc978661350555e81563cf1"
 
 dest_files=[ "res://.import/magazine.png-2cbc89e132ac11c6e6bab6713084771c.stex" ]
-dest_md5="c01a93f41f5c761ccb8bcb9b75b2c439"
+dest_md5="eabea70e2ccbf664d2adb5366d6e5ccf"
 
 [params]
 

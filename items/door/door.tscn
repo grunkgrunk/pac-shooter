@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Items/base_item.tscn" type="PackedScene" id=1]
+[ext_resource path="res://items/door/door.gd" type="Script" id=2]
+
+[node name="door" index="0" instance=ExtResource( 1 )]
+
+script = ExtResource( 2 )
+can_pick_up = true
+item_name = "A shiny door"
+info = null
+look = "A locked door. A tiny key could fit in it it seems"
+pick_up = "This item is slightly too big to be picked up"
+is_open = false
+to_room = null
+spawn_path = null
+
+

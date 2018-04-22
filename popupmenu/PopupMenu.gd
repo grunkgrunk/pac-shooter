@@ -22,6 +22,6 @@ func _on_menu_index_pressed(index):
 	
 	var item = null
 	for a in areas:
-		if a != get_node("../interact"):
+		if a.is_in_group("item"):
 			item = a
 	emit_signal("item_selected", index,clicked_position, item)
