@@ -93,8 +93,7 @@ script = ExtResource( 2 )
 
 [node name="player" parent="." index="1" instance=ExtResource( 3 )]
 
-position = Vector2( 136.399, 440.1 )
-items_scene = null
+position = Vector2( 571.416, 526.081 )
 
 [node name="magazine" parent="." index="2" instance=ExtResource( 4 )]
 

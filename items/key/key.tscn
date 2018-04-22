@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://items/base_item.tscn" type="PackedScene" id=1]
+[ext_resource path="res://items/key/key.png" type="Texture" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 93.0563
+
+[node name="key" instance=ExtResource( 1 )]
+
+item_name = "tiny gold key"
+info = "Null"
+
+[node name="sprite" parent="." index="0"]
+
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="shape" type="CollisionShape2D" parent="." index="1"]
+
+shape = SubResource( 1 )
+
+

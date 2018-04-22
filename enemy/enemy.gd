@@ -23,5 +23,5 @@ func _on_vision_body_entered(body):
 		
 
 func _on_vision_body_exited(body):
-	if body.name == player:
+	if body.name == "player":
 		player = null

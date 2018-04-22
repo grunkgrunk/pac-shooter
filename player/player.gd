@@ -6,20 +6,23 @@ enum STATE {idle, moving, browsing, combining}
 
 
 var state = idle
-export(PackedScene) var items_scene
-onready var items = items_scene.instance()
+#onready var items = items_scene.instance()
 
-export(PackedScene) var inventory_scene
-onready var inventory = inventory_scene.instance()
+
+onready var inventory = preload("res://inventory/inventory.tscn").instance()
+
+onready var all_items = preload("res://items/items.tscn").instance()
+
 onready var target_position = position
-onready var speech = $speech
+onready var speech = $canvas/speech
 
 
 var equipped = null
 var combine_item = []
 
 func _ready():
-	$menu.connect("item_selected", self, "_on_menu_item_selected")
+
+	$canvas/menu.connect("item_selected", self, "_on_menu_item_selected")
 	equip_item(inventory.selected())
 
 func equip_item(item):
@@ -113,46 +116,21 @@ func _input(event):
 				else:
 					var items = [equipped.short_name, combine_item.short_name]
 					if items.has("empty_gun") and items.has("magazine"):
-						print("you have reloaded the gun!")
-						inventory.remove_child(equipped)
-						inventory.remove_child(combine_item)
-						inventory.add_child(items.get_child("gun").duplicate())
+						inventory.get_node(equipped.name).free()
+						inventory.get_node(combine_item.name).free()
+						equipped.free()
+						combine_item.free()
+						var item = all_items.get_node("gun").duplicate()
+						inventory.add_child(item)
+						inventory.item_index = inventory.get_child_count() - 1
+						equip_item(inventory.selected())
+						speech.reload()
 						
 					else:
 						print("what are you trying to achieve?")
 					state = idle
+		
 
-		
-#
-#	if event.is_action_pressed("inventory"):
-#		if state == browsing:
-#			equip_item(inventory.selected())
-#			state = idle
-#		else:
-#			state = browsing
-#	if state == browsing:
-#		if event.is_action_pressed("ui_left"):
-#			inventory.cycle(-1)
-#		if event.is_action_pressed("ui_right"):
-#			inventory.cycle(1)
-#		if event.is_action_pressed("combine"):
-#			combine_item = $equipped.get_child(0)
-#			state = combining
-#
-#	if state == combining:
-#		if event.is_action_pressed("ui_left"):
-#			equip_item(inventory.cycle(-1))
-#		if event.is_action_pressed("ui_right"):
-#			equip_item(inventory.cycle(1))
-#
-#		if event.is_action_pressed("combine"):
-#			var items = [equipped.name, combine_item.name]
-#
-#			if items.has("gun") and items.has("magazine"):
-#				print("you have reloaded the gun!")
-#			else:
-#				print("what are you trying to achieve?")
-#
-#
-			
-		
+
+func _on_menu_index_pressed(index):
+	pass # replace with function body

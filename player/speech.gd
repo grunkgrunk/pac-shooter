@@ -34,4 +34,7 @@ func equip(item):
 	tie.set_state(tie.STATE_OUTPUT)
 	
 	
-	
+func reload():
+	tie.reset()
+	tie.buff_text("I have now reloaded the gun!", 0.02)
+	tie.set_state(tie.STATE_OUTPUT)
