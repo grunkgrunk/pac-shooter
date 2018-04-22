@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://player/player.gd" type="Script" id=1]
-[ext_resource path="res://player/icon.png" type="Texture" id=2]
+[ext_resource path="res://player/tom.png" type="Texture" id=2]
 [ext_resource path="res://player/cross.png" type="Texture" id=3]
 [ext_resource path="res://popupmenu/popupmenu.tscn" type="PackedScene" id=4]
 [ext_resource path="res://player/speech.gd" type="Script" id=5]
@@ -12,7 +12,7 @@
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 63.5395
+radius = 21.6746
 
 [sub_resource type="DynamicFont" id=2]
 
@@ -22,7 +22,7 @@ use_filter = false
 font_data = ExtResource( 8 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="player" type="KinematicBody2D" index="0"]
+[node name="player" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 1
@@ -33,10 +33,13 @@ _sections_unfolded = [ "collision" ]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
+position = Vector2( -1.53008, -105.093 )
+scale = Vector2( 0.457292, 0.457292 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
+position = Vector2( -0.0197449, -12.7801 )
 shape = SubResource( 1 )
 
 [node name="equipped" type="Node2D" parent="." index="2"]
@@ -97,10 +100,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -191.0
-margin_top = -126.0
-margin_right = 189.0
-margin_bottom = -66.0
+margin_left = -94.0
+margin_top = -331.0
+margin_right = 103.0
+margin_bottom = -235.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
