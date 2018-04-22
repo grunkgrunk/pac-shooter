@@ -24,13 +24,12 @@ func interacted():
 		current_room.call_deferred("free")
 		
 		var room = to_room.instance()
-		root.add_child(room)
 		
 		room.add_child(player)
 		player.position = room.get_node(spawn_path).position
-		player.get_node("speech/engine").reset()
-		player.get_node("speech").hide()
-		player.get_node("menu").hide()
+
+		
+		root.add_child(room)
 
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.

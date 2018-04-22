@@ -6,8 +6,7 @@ func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
 	tie.set_color(Color(1,1,1))
-	#combine_item("fish", "fishing rod")
-	print("hello")
+	
 
 func _process(delta):
 	pass

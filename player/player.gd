@@ -16,6 +16,7 @@ onready var all_items = preload("res://items/items.tscn").instance()
 onready var target_position = position
 onready var speech = $speech
 
+signal game_over
 
 var equipped = null
 var combine_item = null
@@ -24,6 +25,9 @@ func _ready():
 	speech.hide()
 	$menu.connect("item_selected", self, "_on_menu_item_selected")
 	equip_item(inventory.selected())
+	speech.tie.reset()
+	speech.hide()
+	$menu.hide()
 
 func equip_item(item):
 	if $equipped.get_child(0):
@@ -31,11 +35,9 @@ func equip_item(item):
 	$equipped.add_child(item)
 	equipped = item
 	
-	
-func equip_hand(hand, item):
-	if hand.get_child(0):
-		hand.get_child(0).queue_free()
-	hand.add_child(item)
+
+func kill():
+	get_node("/root/game").game_over()
 
 func _process(delta):
 	var dist = position.distance_to(target_position)
@@ -132,7 +134,6 @@ func _on_menu_item_selected(index, clicked_position, area):
 func _input(event):
 #	for a in ["inventory", "ui_left", "ui_right", "combine"]:
 #		if event.is_action_pressed(a) and state != idle:
-#			
 		
 	match state:
 		idle:
