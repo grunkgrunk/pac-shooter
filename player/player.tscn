@@ -1,28 +1,18 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://player/player.gd" type="Script" id=1]
 [ext_resource path="res://player/tom.png" type="Texture" id=2]
 [ext_resource path="res://player/cross.png" type="Texture" id=3]
 [ext_resource path="res://popupmenu/popupmenu.tscn" type="PackedScene" id=4]
-[ext_resource path="res://player/speech.gd" type="Script" id=5]
-[ext_resource path="res://addons/GodotTIE/text_interface_engine.gd" type="Script" id=6]
-[ext_resource path="res://addons/GodotTIE/GodotTIE_icon.png" type="Texture" id=7]
-[ext_resource path="res://fonts/Kenney High.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://speech/speech.tscn" type="PackedScene" id=5]
+[ext_resource path="res://player/speech.gd" type="Script" id=6]
 
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
 radius = 21.6746
 
-[sub_resource type="DynamicFont" id=2]
-
-size = 25
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 8 )
-_sections_unfolded = [ "Font", "Settings" ]
-
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 65.9727, 131.296 )
@@ -83,71 +73,13 @@ position = Vector2( 26.8216, -124.796 )
 [node name="menu" parent="." index="7" instance=ExtResource( 4 )]
 
 visible = false
+items = [ "look", null, false, false, false, -1, 0, null, "", false, "interact", null, false, false, false, -1, 0, null, "", false, "use item", null, false, false, false, -1, 0, null, "", false, "Move here", null, false, false, false, -1, 0, null, "", false, "Pick up", null, false, false, false, -1, 0, null, "", false ]
 hide_on_state_item_selection = true
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Popup", "Rect", "Size Flags", "Visibility" ]
 
-[node name="speech" type="Control" parent="." index="8"]
+[node name="speech" parent="." index="8" instance=ExtResource( 5 )]
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 40.0
-margin_bottom = 40.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-script = ExtResource( 5 )
-
-[node name="Panel" type="Panel" parent="speech" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = -94.0
-margin_top = -330.0
-margin_right = 107.0
-margin_bottom = -232.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-
-[node name="engine" type="ReferenceRect" parent="speech" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = -94.0
-margin_top = -331.0
-margin_right = 111.0
-margin_bottom = -226.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 script = ExtResource( 6 )
-__meta__ = {
-"_editor_icon": ExtResource( 7 )
-}
-SCROLL_ON_MAX_LINES = true
-BREAK_ON_MAX_LINES = true
-AUTO_SKIP_WORDS = true
-LOG_SKIPPED_LINES = true
-SCROLL_SKIPPED_LINES = false
-FONT = SubResource( 2 )
-PRINT_INPUT = true
-BLINKING_INPUT = true
-INPUT_CHARACTERS_LIMIT = -1
 
 [node name="canvas" type="CanvasLayer" parent="." index="9"]
 
@@ -170,6 +102,6 @@ audio_bus_name = "Master"
 [node name="shape" type="CollisionShape2D" parent="interact" index="0"]
 
 position = Vector2( -4.93268, -94.707 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 

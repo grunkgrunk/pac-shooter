@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/enemy.png-1891d9038eeed672a2459bc4e7db5910.stex"
+path="res://.import/enemy_shoot.png-8518aa6f4c2db9307a9b36300d9a76fc.stex"
 
 [deps]
 
-source_file="res://enemy/enemy.png"
-source_md5="4b23a15e3291d3f864f817f05596e1d6"
+source_file="res://enemies/enemy_shoot/enemy_shoot.png"
+source_md5="11c9c8cc5b0584d614071f498908042a"
 
-dest_files=[ "res://.import/enemy.png-1891d9038eeed672a2459bc4e7db5910.stex" ]
-dest_md5="7895fbeb61c76e96c64aa3e7c364c8f8"
+dest_files=[ "res://.import/enemy_shoot.png-8518aa6f4c2db9307a9b36300d9a76fc.stex" ]
+dest_md5="df2e92a7247e6dbb1d80668e6f6de566"
 
 [params]
 

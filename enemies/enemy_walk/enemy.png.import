@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/enemy_dead.png-4ce61d8bd54d77d591575175f0b6277f.stex"
+path="res://.import/enemy.png-b4d6d1dcd98f7c2ec64918ce9ccc54ad.stex"
 
 [deps]
 
-source_file="res://enemy/enemy_dead.png"
-source_md5="7a643530454b79e2db18291bdcc175a9"
+source_file="res://enemies/enemy_walk/enemy.png"
+source_md5="4b23a15e3291d3f864f817f05596e1d6"
 
-dest_files=[ "res://.import/enemy_dead.png-4ce61d8bd54d77d591575175f0b6277f.stex" ]
-dest_md5="8c30b4e9dd3b9f6f5f7da11f1801bcb7"
+dest_files=[ "res://.import/enemy.png-b4d6d1dcd98f7c2ec64918ce9ccc54ad.stex" ]
+dest_md5="7895fbeb61c76e96c64aa3e7c364c8f8"
 
 [params]
 

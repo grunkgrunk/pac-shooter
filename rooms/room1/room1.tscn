@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://enemy/enemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://enemies/enemy_walk/enemy.tscn" type="PackedScene" id=1]
 [ext_resource path="res://items/magazine/magazine.tscn" type="PackedScene" id=2]
 [ext_resource path="res://items/key/key.tscn" type="PackedScene" id=3]
 [ext_resource path="res://rooms/room1/bg_1.jpg" type="Texture" id=4]
@@ -12,7 +12,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 105.668, 272.184 )
 
-[node name="room1" type="YSort"]
+[node name="room1" type="YSort" index="0"]
 
 sort_enabled = true
 
