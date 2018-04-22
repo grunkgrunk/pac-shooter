@@ -13,6 +13,8 @@ radius = 13.8027
 
 script = ExtResource( 2 )
 item_name = "nice gun"
+look = null
+pick_up = null
 
 [node name="sprite" parent="." index="0"]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://items/gun/gun.tscn" type="PackedScene" id=1]
 [ext_resource path="res://items/magazine/magazine.tscn" type="PackedScene" id=2]
@@ -6,39 +6,56 @@
 [ext_resource path="res://items/sloth/sloth.tscn" type="PackedScene" id=4]
 [ext_resource path="res://items/bunny/bunny.tscn" type="PackedScene" id=5]
 [ext_resource path="res://items/snake/snake.tscn" type="PackedScene" id=6]
+[ext_resource path="res://items/key/key.tscn" type="PackedScene" id=7]
 
-[node name="items" type="Node2D" index="0"]
+[node name="items" type="Node2D"]
 
 [node name="gun" parent="." index="0" instance=ExtResource( 1 )]
 
 position = Vector2( 431.64, 109.394 )
 item_name = "gun"
 info = ""
+look = null
+pick_up = null
 
 [node name="magazine" parent="." index="1" instance=ExtResource( 2 )]
 
 position = Vector2( 136.287, 494.638 )
 item_name = "magazine"
+look = null
+pick_up = null
 
 [node name="moose" parent="." index="2" instance=ExtResource( 3 )]
 
 position = Vector2( 405.957, 517.569 )
 item_name = "moose"
+look = null
+pick_up = null
 
 [node name="sloth" parent="." index="3" instance=ExtResource( 4 )]
 
 position = Vector2( 718.656, 98.3875 )
 item_name = "sloth"
+look = null
+pick_up = null
 
 [node name="bunny" parent="." index="4" instance=ExtResource( 5 )]
 
 position = Vector2( 210.967, 159.601 )
 item_name = "bunny"
+look = null
+pick_up = null
 
 [node name="snake" parent="." index="5" instance=ExtResource( 6 )]
 
 position = Vector2( 688.469, 323.113 )
 item_name = "ssssssss"
 info = "beware the snek trap"
+look = null
+pick_up = null
+
+[node name="key" parent="." index="6" instance=ExtResource( 7 )]
+
+position = Vector2( 421.124, 284.657 )
 
 

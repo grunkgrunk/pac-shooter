@@ -35,17 +35,21 @@ func equip_hand(hand, item):
 	if hand.get_child(0):
 		hand.get_child(0).queue_free()
 	hand.add_child(item)
-	
 
 func _process(delta):
 	var dist = position.distance_to(target_position)
 	if dist > 5:
 		var dir = (target_position - position).normalized()
-		move_and_collide(dir * 200 * delta)
+		var collision = move_and_collide(dir * 200 * delta)
+		
+		if collision != null:
+			target_position = position
+		
 		$cross/sprite.show()
 	elif state == STATE.moving:
 		position = target_position
 		state = STATE.idle
+		$cross/sprite.hide()
 		
 		
 
@@ -55,6 +59,7 @@ func _on_menu_item_selected(index, clicked_position, area):
 		ACTION.look:
 			print("looking")
 		ACTION.interact:
+			# fix this
 			if area == null:
 				print("cant interact")
 				return
@@ -75,7 +80,7 @@ func _on_menu_item_selected(index, clicked_position, area):
 				if equipped.name.is_subsequence_of(area.name):
 					return
 			
-			if not area.get_overlapping_bodies().has(self):
+			if not area.get_overlapping_areas().has($interact):
 				return
 			
 			var item = area.duplicate()

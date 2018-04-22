@@ -15,4 +15,5 @@ func selected():
 	var item = get_child(item_index).duplicate()
 	item.short_name = from_item.name
 	item.position = Vector2()
+	item.get_node("shape").queue_free()
 	return item

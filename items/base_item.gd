@@ -24,5 +24,3 @@ func cant_use():
 #	if Editor.is_editor_hint():
 #		info = x
 
-
-	
