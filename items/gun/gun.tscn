@@ -14,6 +14,7 @@ radius = 13.8027
 script = ExtResource( 2 )
 can_pick_up = true
 item_name = "nice gun"
+use_item_success = "I killed the badde guy!!"
 
 [node name="sprite" parent="." index="0"]
 

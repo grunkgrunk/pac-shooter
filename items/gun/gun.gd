@@ -13,6 +13,10 @@ func _ready():
 	timer.connect("timeout", self, "_on_timeout")
 
 func use(clicked_position, target):
+	print(clicked_position)
+	if target.is_in_group("enemy"):
+		target.get_node("../").kill()
+		return true
 	
 #func _draw():
 #	if from != null and to != null:

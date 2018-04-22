@@ -27,7 +27,7 @@ _sections_unfolded = [ "Font", "Settings" ]
 custom_solver_bias = 0.0
 extents = Vector2( 65.9727, 131.296 )
 
-[node name="player" type="KinematicBody2D" index="0"]
+[node name="player" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 1
@@ -52,6 +52,8 @@ shape = SubResource( 1 )
 position = Vector2( 33, -131 )
 
 [node name="cross" type="Node" parent="." index="3"]
+
+editor/display_folded = true
 
 [node name="sprite" type="Sprite" parent="cross" index="0"]
 
