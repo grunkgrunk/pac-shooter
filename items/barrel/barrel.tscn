@@ -1,0 +1,67 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://items/base_item.tscn" type="PackedScene" id=1]
+[ext_resource path="res://items/barrel/barrel.gd" type="Script" id=2]
+[ext_resource path="res://items/barrel/barrel.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 13.104, 21.9226 )
+
+[sub_resource type="CircleShape2D" id=2]
+
+custom_solver_bias = 0.0
+radius = 128.422
+
+[sub_resource type="SpriteFrames" id=3]
+
+animations = [ {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="barrel" instance=ExtResource( 1 )]
+
+script = ExtResource( 2 )
+can_pick_up = true
+item_name = null
+info = null
+
+[node name="sprite" parent="." index="0"]
+
+visible = false
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+shape = SubResource( 1 )
+
+[node name="explode_radius" type="Area2D" parent="." index="2"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="explode_radius" index="0"]
+
+shape = SubResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="3"]
+
+scale = Vector2( 0.1, 0.1 )
+frames = SubResource( 3 )
+animation = "default"
+_sections_unfolded = [ "Transform" ]
+
+[connection signal="area_entered" from="explode_radius" to="." method="_on_explode_radius_area_entered"]
+
+

@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://items/door/door.tscn" type="PackedScene" id=1]
+
+[node name="YSort" type="YSort"]
+
+sort_enabled = true
+
+[node name="door" parent="." index="0" instance=ExtResource( 1 )]
+
+position = Vector2( 691.875, 336.823 )
+
+[node name="door2" parent="." index="1" instance=ExtResource( 1 )]
+
+position = Vector2( 294.696, 351.562 )
+is_open = true
+
+

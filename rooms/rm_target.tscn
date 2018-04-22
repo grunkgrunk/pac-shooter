@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://items/door/door.tscn" type="PackedScene" id=1]
+[ext_resource path="res://enemies/enemy_shoot/enemy_shoot.tscn" type="PackedScene" id=2]
+
+[node name="YSort" type="YSort"]
+
+sort_enabled = true
+
+[node name="door" parent="." index="0" instance=ExtResource( 1 )]
+
+position = Vector2( 428.899, 398.106 )
+
+[node name="enemy_shoot" parent="." index="1" instance=ExtResource( 2 )]
+
+position = Vector2( 465.359, 346.907 )
+
+

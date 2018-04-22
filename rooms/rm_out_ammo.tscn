@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://items/door/door.tscn" type="PackedScene" id=1]
+[ext_resource path="res://enemies/enemy_shoot/enemy_shoot.tscn" type="PackedScene" id=2]
+[ext_resource path="res://items/magazine/magazine.tscn" type="PackedScene" id=3]
+
+[node name="YSort" type="YSort"]
+
+sort_enabled = true
+
+[node name="door" parent="." index="0" instance=ExtResource( 1 )]
+
+position = Vector2( 260.563, 333.72 )
+is_open = true
+
+[node name="door2" parent="." index="1" instance=ExtResource( 1 )]
+
+position = Vector2( 556.896, 367.076 )
+is_open = true
+
+[node name="enemy_shoot" parent="." index="2" instance=ExtResource( 2 )]
+
+position = Vector2( 318.744, 406.639 )
+
+[node name="magazine" parent="." index="3" instance=ExtResource( 3 )]
+
+position = Vector2( 624.386, 493.522 )
+
+

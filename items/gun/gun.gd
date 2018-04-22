@@ -17,7 +17,9 @@ func use(clicked_position, target):
 	if target.is_in_group("enemy"):
 		target.get_node("../").kill()
 		return true
-	
+	elif target.is_in_group("barrel"):
+		target.explode()
+		return true
 #func _draw():
 #	if from != null and to != null:
 #		draw_line(Vector2(0,0), to, Color(255, 0, 0), 1)
