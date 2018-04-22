@@ -2,10 +2,11 @@ extends Area2D
 
 export(String) var item_name
 export(String) var info
+var short_name
 
 func _ready():
 	pass
-
+	
 func use(clicked_position, body):
 	pass
 
@@ -20,8 +21,6 @@ func cant_use():
 #func set_info(x):
 #	if Editor.is_editor_hint():
 #		info = x
-	
-	
 
 
 	

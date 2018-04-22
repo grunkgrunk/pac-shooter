@@ -3,14 +3,14 @@
 [ext_resource path="res://items/base_item.tscn" type="PackedScene" id=1]
 [ext_resource path="res://items/moose/moose.png" type="Texture" id=2]
 
-
-
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
 radius = 63.8447
 
-[node name="moose" index="0" instance=ExtResource( 1 )]
+[node name="moose" instance=ExtResource( 1 )]
+
+item_name = "just a moose"
 
 [node name="sprite" parent="." index="0"]
 

@@ -3,11 +3,17 @@ extends KinematicBody2D
 enum ACTION {look, interact, use_item, move, pick_up}
 enum STATE {idle, moving, browsing, combining}
 
+
+
 var state = idle
+export(PackedScene) var items_scene
+onready var items = items_scene.instance()
 
 export(PackedScene) var inventory_scene
 onready var inventory = inventory_scene.instance()
 onready var target_position = position
+onready var speech = $speech
+
 
 var equipped = null
 var combine_item = []
@@ -22,6 +28,13 @@ func equip_item(item):
 	$equipped.add_child(item)
 	equipped = item
 	
+	
+func equip_hand(hand, item):
+	if hand.get_child(0):
+		hand.get_child(0).queue_free()
+	hand.add_child(item)
+	
+
 func _process(delta):
 	var dist = position.distance_to(target_position)
 	if dist > 5:
@@ -31,15 +44,7 @@ func _process(delta):
 	elif state == STATE.moving:
 		position = target_position
 		state = STATE.idle
-	
-	var item_name = equipped.name
-	match state:
-		STATE.idle:
-			$Label.text = "Press I to open inventory"
-		STATE.browsing:
-			$Label.text = "Press I to equip %s or C to combine" % item_name
-		STATE.combining:
-			$Label.text = "Press C again to combine %s with %s" % [item_name, combine_item]
+		speech.open_inventory()
 		
 
 func _on_menu_item_selected(index, clicked_position, area):
@@ -58,7 +63,6 @@ func _on_menu_item_selected(index, clicked_position, area):
 			target_position = clicked_position
 			$cross/sprite.global_position = target_position
 			$cross/sprite.show()
-			
 		ACTION.pick_up:
 			if area == null:
 				return
@@ -82,60 +86,73 @@ func _input(event):
 			if event.is_action_pressed("inventory"):
 				state = browsing
 				combine_item = null
+				speech.combine_or_select([equipped, combine_item])
 		browsing:
 			if event.is_action_pressed("inventory") and combine_item == null:
 				state = idle
 				equip_item(inventory.selected())
+				speech.equip(equipped.item_name)
 			elif event.is_action_pressed("ui_left"):
 				# should show this with an animation
 				inventory.cycle(-1)
 				equip_item(inventory.selected())
+				
+				
+				speech.combine_or_select([equipped, combine_item])
+				
 			if event.is_action_pressed("ui_right"):
 				inventory.cycle(1)
 				equip_item(inventory.selected())
+				speech.combine_or_select([equipped, combine_item])
+				
 			elif event.is_action_pressed("combine"):
 				if combine_item == null:
 					state = browsing
 					combine_item = inventory.selected()
+					speech.combine_or_select([equipped, combine_item])
 				else:
-					var items = [equipped.name, combine_item.name]
-					if items.has("gun") and items.has("magazine"):
+					var items = [equipped.short_name, combine_item.short_name]
+					if items.has("empty_gun") and items.has("magazine"):
 						print("you have reloaded the gun!")
+						inventory.remove_child(equipped)
+						inventory.remove_child(combine_item)
+						inventory.add_child(items.get_child("gun").duplicate())
+						
 					else:
 						print("what are you trying to achieve?")
 					state = idle
 
 		
-			
-	if event.is_action_pressed("inventory"):
-		if state == browsing:
-			state = idle
-		else:
-			state = browsing
-	if state == browsing:
-		if event.is_action_pressed("ui_left"):
-			inventory.cycle(-1)
-		if event.is_action_pressed("ui_right"):
-			inventory.cycle(1)
-	
-		if event.is_action_pressed("combine"):
-			combine_item = $equipped.get_child(0)
-			state = combining
-	
-	if state == combining:
-		if event.is_action_pressed("ui_left"):
-			equip_item(inventory.cycle(-1))
-		if event.is_action_pressed("ui_right"):
-			equip_item(inventory.cycle(1))
-		
-		if event.is_action_pressed("combine"):
-			var items = [equipped.name, combine_item.name]
-			
-			if items.has("gun") and items.has("magazine"):
-				print("you have reloaded the gun!")
-			else:
-				print("what are you trying to achieve?")
-			
-			
+#
+#	if event.is_action_pressed("inventory"):
+#		if state == browsing:
+#			equip_item(inventory.selected())
+#			state = idle
+#		else:
+#			state = browsing
+#	if state == browsing:
+#		if event.is_action_pressed("ui_left"):
+#			inventory.cycle(-1)
+#		if event.is_action_pressed("ui_right"):
+#			inventory.cycle(1)
+#		if event.is_action_pressed("combine"):
+#			combine_item = $equipped.get_child(0)
+#			state = combining
+#
+#	if state == combining:
+#		if event.is_action_pressed("ui_left"):
+#			equip_item(inventory.cycle(-1))
+#		if event.is_action_pressed("ui_right"):
+#			equip_item(inventory.cycle(1))
+#
+#		if event.is_action_pressed("combine"):
+#			var items = [equipped.name, combine_item.name]
+#
+#			if items.has("gun") and items.has("magazine"):
+#				print("you have reloaded the gun!")
+#			else:
+#				print("what are you trying to achieve?")
+#
+#
 			
 		

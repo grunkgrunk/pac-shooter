@@ -3,7 +3,7 @@ extends "../base_item.gd"
 var from = null 
 var to = null
 
-onready var timer = $Timer
+onready var timer = $timer
 
 func _ready():
 	# Called every time the node is added to the scene.
@@ -30,7 +30,6 @@ func use(clicked_position, body):
 			result["collider"].queue_free()
 	
 	update()
-
 
 func _on_timeout():
 	from = null

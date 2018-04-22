@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://inventory/inventory.gd" type="Script" id=1]
 [ext_resource path="res://items/bunny/bunny.tscn" type="PackedScene" id=2]
-[ext_resource path="res://items/gun/gun.tscn" type="PackedScene" id=3]
+[ext_resource path="res://items/sloth/sloth.tscn" type="PackedScene" id=3]
+[ext_resource path="res://items/empty_gun/empty_gun.tscn" type="PackedScene" id=4]
 
 [node name="inventory" type="Node2D"]
 
@@ -12,8 +13,12 @@ script = ExtResource( 1 )
 
 position = Vector2( 132.161, 178.39 )
 
-[node name="gun" parent="." index="1" instance=ExtResource( 3 )]
+[node name="sloth" parent="." index="1" instance=ExtResource( 3 )]
 
-position = Vector2( 407.307, 183.641 )
+position = Vector2( 545.041, 116.569 )
+
+[node name="empty_gun" parent="." index="2" instance=ExtResource( 4 )]
+
+position = Vector2( 356.899, 308.611 )
 
 

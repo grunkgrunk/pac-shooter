@@ -11,6 +11,8 @@ func cycle(amount):
 		item_index = 0
 
 func selected():
+	var from_item = get_child(item_index)
 	var item = get_child(item_index).duplicate()
+	item.short_name = from_item.name
 	item.position = Vector2()
 	return item

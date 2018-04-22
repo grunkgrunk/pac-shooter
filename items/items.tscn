@@ -7,12 +7,13 @@
 [ext_resource path="res://items/bunny/bunny.tscn" type="PackedScene" id=5]
 [ext_resource path="res://items/snake/snake.tscn" type="PackedScene" id=6]
 
-[node name="items" type="Node2D"]
+[node name="items" type="Node2D" index="0"]
 
 [node name="gun" parent="." index="0" instance=ExtResource( 1 )]
 
 position = Vector2( 431.64, 109.394 )
 item_name = "gun"
+info = ""
 
 [node name="magazine" parent="." index="1" instance=ExtResource( 2 )]
 

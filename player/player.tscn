@@ -1,34 +1,48 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://player/player.gd" type="Script" id=1]
-[ext_resource path="res://inventory/inventory.tscn" type="PackedScene" id=2]
-[ext_resource path="res://player/icon.png" type="Texture" id=3]
-[ext_resource path="res://popupmenu/popupmenu.tscn" type="PackedScene" id=4]
-[ext_resource path="res://player/cross.png" type="Texture" id=5]
+[ext_resource path="res://items/items.tscn" type="PackedScene" id=2]
+[ext_resource path="res://inventory/inventory.tscn" type="PackedScene" id=3]
+[ext_resource path="res://player/icon.png" type="Texture" id=4]
+[ext_resource path="res://popupmenu/popupmenu.tscn" type="PackedScene" id=5]
+[ext_resource path="res://player/cross.png" type="Texture" id=6]
+[ext_resource path="res://player/speech.gd" type="Script" id=7]
+[ext_resource path="res://addons/GodotTIE/text_interface_engine.gd" type="Script" id=8]
+[ext_resource path="res://addons/GodotTIE/GodotTIE_icon.png" type="Texture" id=9]
+[ext_resource path="res://fonts/Kenney Pixel.ttf" type="DynamicFontData" id=10]
 
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
 radius = 63.5395
 
-[node name="player" type="KinematicBody2D" index="0"]
+[sub_resource type="DynamicFont" id=2]
+
+size = 30
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 10 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[node name="player" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-inventory_scene = ExtResource( 2 )
+items_scene = ExtResource( 2 )
+inventory_scene = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
 shape = SubResource( 1 )
 
-[node name="menu" parent="." index="2" instance=ExtResource( 4 )]
+[node name="menu" parent="." index="2" instance=ExtResource( 5 )]
 
 visible = false
 items = [ "look", null, false, false, false, -1, 0, null, "", false, "interact", null, false, false, false, -1, 0, null, "", false, "use item", null, false, false, false, -1, 0, null, "", false, "Move here", null, false, false, false, -1, 0, null, "", false, "Pick up", null, false, false, false, -1, 0, null, "", false ]
@@ -37,37 +51,17 @@ _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "M
 
 [node name="equipped" type="Node2D" parent="." index="3"]
 
-[node name="Label" type="Label" parent="." index="4"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = -57.0
-margin_top = 73.0
-margin_right = 65.0
-margin_bottom = 123.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="cross" type="Node" parent="." index="5"]
+[node name="cross" type="Node" parent="." index="4"]
 
 [node name="sprite" type="Sprite" parent="cross" index="0"]
 
 visible = false
 scale = Vector2( 0.1, 0.1 )
 z_index = -1
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
-[node name="tween" type="Tween" parent="." index="6"]
+[node name="tween" type="Tween" parent="." index="5"]
 
 repeat = false
 playback_process_mode = 1
@@ -75,5 +69,59 @@ playback_speed = 1.0
 playback/active = false
 playback/repeat = false
 playback/speed = 1.0
+
+[node name="hand_left" type="Position2D" parent="." index="6"]
+
+position = Vector2( -84, 0 )
+
+[node name="hand_right" type="Position2D" parent="." index="7"]
+
+position = Vector2( 87, 0 )
+
+[node name="speech" type="Control" parent="." index="8"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 7 )
+
+[node name="engine" type="ReferenceRect" parent="speech" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -191.0
+margin_top = -126.0
+margin_right = 189.0
+margin_bottom = -66.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 8 )
+__meta__ = {
+"_editor_icon": ExtResource( 9 )
+}
+SCROLL_ON_MAX_LINES = true
+BREAK_ON_MAX_LINES = true
+AUTO_SKIP_WORDS = true
+LOG_SKIPPED_LINES = true
+SCROLL_SKIPPED_LINES = false
+FONT = SubResource( 2 )
+PRINT_INPUT = true
+BLINKING_INPUT = true
+INPUT_CHARACTERS_LIMIT = -1
 
 
