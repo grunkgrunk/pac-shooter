@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://rooms/base_room.tscn" type="PackedScene" id=1]
+[ext_resource path="res://rooms/start/start.jpg" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 47.7991, 95.6414 )
+
+[node name="start" index="0" instance=ExtResource( 1 )]
+
+_sections_unfolded = [ "Transform" ]
+
+[node name="background" parent="." index="0"]
+
+texture = ExtResource( 2 )
+
+[node name="collision" parent="." index="1"]
+
+visible = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="collision" index="0"]
+
+visible = false
+build_mode = 0
+polygon = PoolVector2Array( 23.2895, 17.7869, 641.73, 40.5865, 636.98, 222.984, 331.085, 596.328, 774.728, 591.578, 730.079, 160.285, 666.43, 167.885, 656.93, 40.5865, 996.075, 62.4362, 853.577, 792.025, 160.087, 726.476 )
+
+[node name="door" parent="." index="2"]
+
+position = Vector2( 669.74, 149.148 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door" index="1"]
+
+position = Vector2( 5.69995, 10.4499 )
+shape = SubResource( 1 )
+
+[node name="spawn_door" parent="." index="3"]
+
+position = Vector2( 508.242, 552.892 )
+
+

@@ -7,12 +7,11 @@
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 13.8027
+radius = 111.755
 
-[node name="gun" instance=ExtResource( 1 )]
+[node name="gun" index="0" instance=ExtResource( 1 )]
 
 script = ExtResource( 2 )
-can_pick_up = true
 item_name = "nice gun"
 use_item_success = "I killed the badde guy!!"
 
@@ -20,10 +19,11 @@ use_item_success = "I killed the badde guy!!"
 
 scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 3 )
-_sections_unfolded = [ "Offset", "Transform" ]
+_sections_unfolded = [ "Material", "Offset", "Transform", "Visibility" ]
 
 [node name="shape" type="CollisionShape2D" parent="." index="1"]
 
+position = Vector2( -11.4129, -1.73193 )
 shape = SubResource( 1 )
 
 [node name="timer" type="Timer" parent="." index="2"]
